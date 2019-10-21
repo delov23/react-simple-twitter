@@ -1,0 +1,83 @@
+form.centered-form {
+    color: black;
+    width: 65vw;
+    height: 40vh;
+    margin-top: 5vh;
+    border: 0.1vw solid #35414a;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #0f171f;
+}
+
+form.centered-form input.form-input {
+    margin-bottom: 2vh;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2vh;
+    font-family: 'Raleway', sans-serif;
+    color: #141212;
+    font-size: 1.1rem;
+    background-color: #273c50;
+    border: 0.1vw solid #242b31;
+    border-radius: 12px;
+    padding: 1vh;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+form.centered-form textarea.form-input {
+    margin-bottom: 2vh;
+    width: 80%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Raleway', sans-serif;
+    color: #141212;
+    font-size: 1.1rem;
+    background-color: #273c50;
+    border: 0.1vw solid #242b31;
+    border-radius: 12px;
+    padding: 1vh;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+input.lg {
+    height: 7vh !important;
+}
+
+form.centered-form button.form-submit {
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    color: #141212;
+    font-size: 1.1rem;
+    background-color: #273c50;
+    border: 0.1vw solid #242b31;
+    border-radius: 12px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1vh;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+@media screen and (min-width: 1300px) {
+    form.centered-form {
+        width: 40vw;
+    }
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+body {
+  margin: 0;
+  background-color: #15202b;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+* {
+  font-family: 'Baloo Bhai', cursive;
+  color: white;
+  font-weight: 500;
+}
+
+a {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: unset;
+}
+
+.content-block {
+  margin: 0;
+  border: 0.1vw solid #35414a;
+  border-top: 0px;
+  background-color: #15202b;
+}
