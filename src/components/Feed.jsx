@@ -16,16 +16,13 @@ class Feed extends React.Component {
     }
 
     getSortedTweets() {
-        console.log(
-            this.state.tweets.sort((a, b) => {
-                const diff = a.timestamp - b.timestamp;
-                return diff === 0 ? 0 : diff > 0 ? -1 : 1;
-            })
-        );
+        return this.state.tweets.sort((a, b) => {
+            const diff = a.timestamp - b.timestamp;
+            return diff === 0 ? 0 : diff > 0 ? -1 : 1;
+        });
     }
 
     render() {
-        this.getSortedTweets();
         return (
             <section className="content-wrapper">
                 <div className="heading content-block">
@@ -37,7 +34,7 @@ class Feed extends React.Component {
                     </Link>
                 </div>
                 <main className="tweets">
-                    {this.state.tweets.map(({ id, ...rest }) => (
+                    {this.getSortedTweets().map(({ id, ...rest }) => (
                         <Tweet key={id} {...rest} />
                     ))}
                 </main>

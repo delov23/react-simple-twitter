@@ -1,0 +1,12 @@
+input.search {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 2vh;
+    font-family: 'Raleway', sans-serif;
+    color: #dfdfdf;
+    font-size: 1.1rem;
+    background-color: #273c50;
+    border: 0.1vw solid #242b31;
+    padding: 1vh;
+}

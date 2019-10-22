@@ -5,6 +5,7 @@ import { TweetsContext } from './ctx/tweetsCtx';
 
 import './App.css';
 import Add from './components/Add';
+import Search from './components/Search';
 
 const App = () => {
   const [tweets, setTweets] = useState([
@@ -89,6 +90,7 @@ const App = () => {
               <Route path="/" exact={true} component={Feed} />
               <Route path="/tweet/new" component={Add} />
               <Route path="/refresh" render={() => <Redirect to={'/'} />} />
+              <Route path="/search" component={Search} />
             </TweetsContext.Provider>
           </Switch>
         </main>

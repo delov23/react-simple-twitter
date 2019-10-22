@@ -28,3 +28,22 @@ a {
   border-top: 0px;
   background-color: #15202b;
 }
+
+div.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 6vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  border-top: 0;
+}
+
+div.heading h1 {
+  padding-top: 0.4vh;
+  font-size: 2.2vh;
+}
+
+div.centered {
+  justify-content: center !important;
+}
