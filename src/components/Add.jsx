@@ -27,7 +27,7 @@ const Add = () => {
     };
 
     const handleChange = ev => {
-        setTweet({ ...tweet, [ev.target.name]: [ev.target.value] });
+        setTweet({ ...tweet, [ev.target.name]: ev.target.value });
     };
 
     if (redirect) {

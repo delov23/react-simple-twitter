@@ -13,9 +13,10 @@ class Search extends React.Component {
     };
 
     componentDidMount() {
+        const sorted = this.getSortedTweets(this.context.tweets);
         this.setState({
-            tweets: this.getSortedTweets(this.context.tweets),
-            queried: this.getSortedTweets(this.context.tweets),
+            tweets: sorted,
+            queried: sorted,
             addTweet: this.context.addTweet
         });
     }
@@ -28,19 +29,23 @@ class Search extends React.Component {
     };
 
     handleChange = ({ target: { value: search } }) => {
+        const lowerSearch = search.toLowerCase();
         this.setState({
             queried: this.getSortedTweets(this.state.tweets).filter(t => {
                 return (
                     t.user.username
                         .toLowerCase()
-                        .includes(search.toLowerCase()) ||
-                    t.user.name.toLowerCase().includes(search.toLowerCase()) ||
-                    t.content.toLowerCase().includes(search.toLowerCase())
+                        .includes(lowerSearch) ||
+                    t.user.name
+                        .toLowerCase()
+                        .includes(lowerSearch) ||
+                    t.content
+                        .toLowerCase()
+                        .includes(lowerSearch)
                 );
             }),
             query: search
         });
-        console.log(this.state);
     };
 
     render() {

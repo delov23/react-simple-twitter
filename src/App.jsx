@@ -37,7 +37,7 @@ const App = () => {
       id: '29dhh2ida-2d',
       user: {
         name: '🎉Alex',
-        username: 'alex_sweety',
+        username: 'alex_sweetie',
         picture:
           'https://i.pinimg.com/originals/43/ef/18/43ef182ac321c4f757ecfde338eea736.jpg'
       },
