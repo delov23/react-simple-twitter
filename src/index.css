@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 body {
   margin: 0;
-  background-color: #15202b;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -11,8 +11,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 * {
   font-family: 'Baloo Bhai', cursive;
-  color: white;
-  font-weight: 500;
+  font-weight: 500;  
 }
 
 a {
@@ -22,7 +21,14 @@ a {
   color: unset;
 }
 
-.content-block {
+div.app-wrapper .content-block {
+  margin: 0;
+  border: 0.1vw solid #35414a;
+  border-top: 0px;
+  background-color: #8eafcf;
+}
+
+div.app-wrapper.dark .content-block {
   margin: 0;
   border: 0.1vw solid #35414a;
   border-top: 0px;
@@ -46,4 +52,13 @@ div.heading h1 {
 
 div.centered {
   justify-content: center !important;
+}
+
+button.button-a {
+  background-color: transparent;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  width: 100%;
+  height: 100%;
 }

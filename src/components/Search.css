@@ -4,9 +4,18 @@ input.search {
     margin-right: auto;
     height: 2vh;
     font-family: 'Raleway', sans-serif;
-    color: #dfdfdf;
+    color: black;
     font-size: 1.1rem;
-    background-color: #273c50;
+    background-color: #ffffff;
     border: 0.1vw solid #242b31;
     padding: 1vh;
+}
+
+input.search::placeholder {
+    opacity: 0.5;
+}
+
+div.app-wrapper.dark input.search {
+    color: #dfdfdf;
+    background-color: #273c50;
 }

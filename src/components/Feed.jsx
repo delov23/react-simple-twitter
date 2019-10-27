@@ -1,22 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Tweet from './Tweet';
-import { TweetsContext } from '../ctx/tweetsCtx';
+import { connect } from 'react-redux';
 
 import './Feed.css';
 
 class Feed extends React.Component {
-    state = {
-        tweets: [],
-        addTweet: () => {}
-    };
-
-    componentDidMount() {
-        this.setState(this.context);
-    }
-
     getSortedTweets() {
-        return this.state.tweets.sort((a, b) => {
+        return this.props.tweets.sort((a, b) => {
             const diff = a.timestamp - b.timestamp;
             return diff === 0 ? 0 : diff > 0 ? -1 : 1;
         });
@@ -43,6 +34,4 @@ class Feed extends React.Component {
     }
 }
 
-Feed.contextType = TweetsContext;
-
-export default Feed;
+export default connect(({ tweets, theme }) => ({ tweets, theme }))(Feed);

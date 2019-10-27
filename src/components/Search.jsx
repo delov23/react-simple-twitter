@@ -1,21 +1,18 @@
 import React from 'react';
 import Tweet from './Tweet';
-import { TweetsContext } from '../ctx/tweetsCtx';
+import { connect } from 'react-redux';
 
 import './Search.css';
 
 class Search extends React.Component {
     state = {
-        tweets: [],
-        addTweet: () => {},
         query: '',
         queried: []
     };
 
     componentDidMount() {
-        const sorted = this.getSortedTweets(this.context.tweets);
+        const sorted = this.getSortedTweets(this.props.tweets);
         this.setState({
-            tweets: sorted,
             queried: sorted,
             addTweet: this.context.addTweet
         });
@@ -31,7 +28,7 @@ class Search extends React.Component {
     handleChange = ({ target: { value: search } }) => {
         const lowerSearch = search.toLowerCase();
         this.setState({
-            queried: this.getSortedTweets(this.state.tweets).filter(t => {
+            queried: this.getSortedTweets(this.props.tweets).filter(t => {
                 return (
                     t.user.username
                         .toLowerCase()
@@ -73,6 +70,4 @@ class Search extends React.Component {
     }
 }
 
-Search.contextType = TweetsContext;
-
-export default Search;
+export default connect(({ tweets, theme }) => ({ tweets, theme }))(Search);

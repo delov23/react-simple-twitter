@@ -1,8 +1,9 @@
 form.centered-form {
     width: 65vw;
     height: 40vh;
-    margin-top: 5vh;
+    margin-top: 20px !important;
     border: 0.1vw solid #35414a;
+    border-top: 0.1vw solid #35414a !important;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -22,9 +23,9 @@ form.centered-form input.form-input {
     margin-right: auto;
     height: 2vh;
     font-family: 'Raleway', sans-serif;
-    color: #dfdfdf;
+    color: black;
     font-size: 1.1rem;
-    background-color: #273c50;
+    background-color: #ffffff;
     border: 0.1vw solid #242b31;
     border-radius: 12px;
     padding: 1vh;
@@ -32,6 +33,11 @@ form.centered-form input.form-input {
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+}
+
+div.app-wrapper.dark form.centered-form input.form-input {
+    background-color: #273c50;
+    color: #dfdfdf;
 }
 
 form.centered-form textarea.form-input {
@@ -41,9 +47,9 @@ form.centered-form textarea.form-input {
     margin-left: auto;
     margin-right: auto;
     font-family: 'Raleway', sans-serif;
-    color: #dfdfdf;
+    color: black;
     font-size: 1.1rem;
-    background-color: #273c50;
+    background-color: #ffffff;
     border: 0.1vw solid #242b31;
     border-radius: 12px;
     padding: 1vh;
@@ -53,6 +59,11 @@ form.centered-form textarea.form-input {
     -o-border-radius: 12px;
 }
 
+div.app-wrapper.dark form.centered-form textarea.form-input {
+    background-color: #273c50;
+    color: #dfdfdf;
+}
+
 input.lg {
     height: 7vh !important;
 }
@@ -60,9 +71,9 @@ input.lg {
 form.centered-form button.form-submit {
     cursor: pointer;
     font-family: 'Raleway', sans-serif;
-    color: #dfdfdf;
+    color: black;
     font-size: 1.1rem;
-    background-color: #273c50;
+    background-color: white;
     border: 0.1vw solid #242b31;
     border-radius: 12px;
     width: 40%;
@@ -73,6 +84,11 @@ form.centered-form button.form-submit {
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+}
+
+div.app-wrapper.dark form.centered-form button.form-submit {
+    background-color: #273c50;
+    color: #dfdfdf;
 }
 
 @media screen and (min-width: 1300px) {

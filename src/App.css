@@ -1,5 +1,15 @@
-div.app-wrapper {
+div.app-wrapper.dark {
+  min-height: 100vh;
   display: flex;
+  background-color: #15202b;
+  color: white;
+}
+
+div.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  color: black;
+  background-color: #8eafcf;
 }
 
 main.router-content {
