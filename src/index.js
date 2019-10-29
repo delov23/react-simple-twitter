@@ -9,7 +9,7 @@ import { rootReducer } from './state/reducers';
 import './index.css';
 
 const initialState = {
-    theme: 'light',
+    theme: localStorage.getItem('theme') || 'light',
     tweets: [
         {
             id: '29dhh2ida-9d',

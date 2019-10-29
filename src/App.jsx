@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,65 +9,77 @@ import {
 import { toggleTheme } from './state/actions';
 import { connect } from 'react-redux';
 
-import Feed from './components/Feed';
-import Add from './components/Add';
-import Search from './components/Search';
-
 import './App.css';
+import SuspenseLoading from './components/Suspense';
+
+// import Feed from './components/Feed';
+// import Add from './components/Add';
+// import Search from './components/Search';
+
+const Feed = React.lazy(() => import('./components/Feed.jsx'));
+const Add = React.lazy(() => import('./components/Add.jsx'));
+const Search = React.lazy(() => import('./components/Search.jsx'));
 
 const App = ({ theme, handleToggleTheme }) => {
     return (
-        <Router>
-            <div className={`app-wrapper ${theme === 'dark' ? 'dark' : ''}`}>
-                <nav className="side-nav">
-                    <ul>
-                        <li>
-                            <Link to={'/'}>
-                                <span
-                                    className="main-emoji"
-                                    role="img"
-                                    aria-label="house"
+        <Suspense fallback={<SuspenseLoading />}>
+            <Router>
+                <div
+                    className={`app-wrapper ${theme === 'dark' ? 'dark' : ''}`}
+                >
+                    <nav className="side-nav">
+                        <ul>
+                            <li>
+                                <Link to={'/'}>
+                                    <span
+                                        className="main-emoji"
+                                        role="img"
+                                        aria-label="house"
+                                    >
+                                        💙
+                                    </span>
+                                </Link>
+                                <Link to={'/'}>
+                                    <span role="img" aria-label="house">
+                                        🏠
+                                    </span>
+                                </Link>
+                                <Link to={'/tweet/new'}>
+                                    <span role="img" aria-label="house">
+                                        ➕
+                                    </span>
+                                </Link>
+                                <Link to={'/search'}>
+                                    <span role="img" aria-label="house">
+                                        🔍
+                                    </span>
+                                </Link>
+                                <button
+                                    className="button-a"
+                                    onClick={handleToggleTheme}
                                 >
-                                    💙
-                                </span>
-                            </Link>
-                            <Link to={'/'}>
-                                <span role="img" aria-label="house">
-                                    🏠
-                                </span>
-                            </Link>
-                            <Link to={'/tweet/new'}>
-                                <span role="img" aria-label="house">
-                                    ➕
-                                </span>
-                            </Link>
-                            <Link to={'/search'}>
-                                <span role="img" aria-label="house">
-                                    🔍
-                                </span>
-                            </Link>
-                            <button className="button-a" onClick={handleToggleTheme}>
-                                <span role="img" aria-label="house">
-                                    {theme === 'light' ? '⚫️' : '⚪'}
-                                </span>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-                <main className="router-content">
-                    <Switch>
-                        <Route path="/" exact={true} component={Feed} />
-                        <Route path="/tweet/new" component={Add} />
-                        <Route
-                            path="/refresh"
-                            render={() => <Redirect to={'/'} />}
-                        />
-                        <Route path="/search" component={Search} />
-                    </Switch>
-                </main>
-                <div className="space-right"></div>
-            </div>
-        </Router>
+                                    <span role="img" aria-label="house">
+                                        {theme === 'light' ? '⚫️' : '⚪'}
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                    <main className="router-content">
+                        <Switch>
+                            <Route path="/" exact={true} component={Feed} />
+                            <Route path="/tweet/new" component={Add} />
+                            <Route
+                                path="/refresh"
+                                render={() => <Redirect to={'/'} />}
+                            />
+                            <Route path="/search" component={Search} />
+                        </Switch>
+                    </main>
+                    <div className="space-right"></div>
+                </div>
+            </Router>
+        </Suspense>
     );
 };
 

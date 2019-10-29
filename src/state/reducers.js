@@ -13,7 +13,9 @@ const tweetsReducer = (tweets = [], { type, ...action }) => {
 const themeReducer = (theme = 'light', { type }) => {
     switch (type) {
         case TOGGLE_THEME:
-            return theme === 'light' ? 'dark' : 'light';
+            const newTheme = theme === 'light' ? 'dark' : 'light';
+            window.localStorage.setItem('theme', newTheme);
+            return newTheme;
         default:
             return theme;
     }
