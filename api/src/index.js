@@ -55,6 +55,6 @@ server.applyMiddleware({ app, path: '/graphql' });
 
 const httpServer = http.createServer(app);
 
-httpServer.listen(3001, () => {
-  console.log(`Server listening ${3001}${server.graphqlPath}`);
+httpServer.listen(3002, () => {
+  console.log(`Server listening ${3002}${server.graphqlPath}`);
 });

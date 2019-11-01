@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import AllTweets from './apollo-components/AllTweets';
+import AllTweets from './AllTweets';
 
 const Pages = () => {
     return (

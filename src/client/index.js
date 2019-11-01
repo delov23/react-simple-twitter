@@ -6,7 +6,7 @@ import { typeDefs } from './local';
 import authLink from './auth';
 
 const httpLink = createHttpLink({
-    uri: 'http://localhost:3001/graphql'
+    uri: 'http://localhost:3002/graphql'
 });
 
 const cache = new InMemoryCache();

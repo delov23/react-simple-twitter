@@ -2,8 +2,8 @@ import React from 'react';
 import { gql } from 'graphql.macro';
 import { useQuery } from '@apollo/react-hooks';
 
-import Tweet from './Tweet';
-import './Feed.css';
+import Tweet from '../Tweet';
+import '../Feed.css';
 
 const ALL_TWEETS_QUERY = gql`
     query AllTweetsQuery($take: Int, $after: String) {
