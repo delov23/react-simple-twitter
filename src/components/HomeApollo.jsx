@@ -47,10 +47,16 @@ const AllTweets = () => {
     } = data;
 
     return (
-        <div>
-            {tweets.map(t => (
-                <Tweet key={t.id} tweet={t} />
-            ))}
+        <div className={`app-wrapper`}>
+            <main className="router-content">
+                <section className="content-wrapper">
+                    <div className="tweets">
+                        {tweets.map(t => (
+                            <Tweet key={t.id} tweet={t} />
+                        ))}
+                    </div>
+                </section>
+            </main>
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.css';
+
 import Apollo from './components/Apollo';
 
 ReactDOM.render(<Apollo />, document.getElementById('root'))
@@ -10,8 +12,6 @@ ReactDOM.render(<Apollo />, document.getElementById('root'))
 
 // import App from './App';
 // import { rootReducer } from './state/reducers';
-
-// import './index.css';
 
 // const initialState = {
 //     theme: localStorage.getItem('theme') || 'light',
