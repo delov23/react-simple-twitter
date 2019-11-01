@@ -1,0 +1,31 @@
+scalar BigInt
+
+type Query {
+    me: User
+    allTweets(take: Int, after: String): TweetsCollection!
+}
+
+type Mutation {
+    logIn(username: String!): String!
+}
+
+type User {
+    id: ID!
+    username: String!
+    name: String!
+    picture: String!
+}
+
+type TweetsCollection {
+    tweets: [Tweet!]!
+    hasMore: Boolean!
+    cursor: String
+}
+
+type Tweet {
+    id: ID!
+    user: User!
+    content: String!
+    timestamp: BigInt!
+    image: String
+}

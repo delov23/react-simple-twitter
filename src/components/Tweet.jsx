@@ -3,10 +3,12 @@ import React from 'react';
 import './Tweet.css';
 
 const Tweet = ({
-    user: { name, picture, username },
-    content,
-    timestamp,
-    ...rest
+    tweet: {
+        user: { name, picture, username },
+        timestamp,
+        content,
+        ...rest
+    }
 }) => {
     const elapsedTime = new Date(new Date() - new Date(timestamp));
     let before = elapsedTime.getMinutes()
