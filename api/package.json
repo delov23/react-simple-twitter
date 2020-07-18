@@ -20,7 +20,7 @@
     "graphql-resolvers": "0.3.3",
     "graphql.macro": "1.4.2",
     "jsonwebtoken": "8.5.1",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "morgan": "1.9.1"
   },
   "devDependencies": {
